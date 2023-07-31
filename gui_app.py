@@ -14,7 +14,7 @@ def gui_ivesti_pajamas():
     pajamos_suma_entry.focus()
     zurnalas_listbox.delete(0, tk.END)
     zurnalas_listbox.insert(tk.END, *biudzetas.zurnalas)
-
+    balansas_label['text'] = f"Balansas: {biudzetas.balansas()}"
 
 def gui_ivesti_islaidas():
     suma = float(islaidos_suma_entry.get())
@@ -29,6 +29,7 @@ def gui_ivesti_islaidas():
     islaidos_suma_entry.focus()
     zurnalas_listbox.delete(0, tk.END)
     zurnalas_listbox.insert(tk.END, *biudzetas.zurnalas)
+    balansas_label['text'] = f"Balansas: {biudzetas.balansas()}"
 
 # def istrinti():
 #     indeksas = asmenys_listbox.curselection()[0]
@@ -51,6 +52,7 @@ pajamos_info_label = tk.Label(window, text="Info")
 pajamos_info_entry = tk.Entry(window)
 pajamos_ivedimas_button = tk.Button(window, text="Įvesti pajamas", command=gui_ivesti_pajamas)
 
+
 # pajamų forma:
 islaidos_label = tk.Label(window, text="Įveskite išlaidas:")
 islaidos_suma_label = tk.Label(window, text="Suma")
@@ -63,7 +65,9 @@ islaidos_info_label = tk.Label(window, text="Info")
 islaidos_info_entry = tk.Entry(window)
 islaidos_ivedimas_button = tk.Button(window, text="Įvesti išlaidas", command=gui_ivesti_islaidas)
 
+
 # trinti_button = tk.Button(window, text="Ištrinti", command=istrinti)
+balansas_label = tk.Label(window, text=f"Balansas: {biudzetas.balansas()}")
 zurnalas_listbox = tk.Listbox(window)
 zurnalas_listbox.insert(tk.END, *biudzetas.zurnalas)
 
@@ -89,6 +93,7 @@ islaidos_info_label.grid(row=9, column=0)
 islaidos_info_entry.grid(row=9, column=1)
 islaidos_ivedimas_button.grid(row=10, columnspan=2)
 
-zurnalas_listbox.grid(row=11, columnspan=2)
+balansas_label.grid(row=11, columnspan=2)
+zurnalas_listbox.grid(row=12, columnspan=2)
 
 window.mainloop()
