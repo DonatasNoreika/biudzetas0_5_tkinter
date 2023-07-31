@@ -40,7 +40,7 @@ def gui_ivesti_islaidas():
 
 
 window = tk.Tk()
-window.geometry("180x400")
+window.geometry("220x450")
 
 # pajamų forma:
 pajamos_label = tk.Label(window, text="Įveskite pajamas:")
